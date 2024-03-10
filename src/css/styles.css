@@ -1,141 +1,164 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-
-:root {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #434455;
+  background-color: #fff;
 }
 
-.form {
-  width: 371px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin: 0 auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.input {
-  background: #fff;
-  border-radius: 4px;
-  padding-left: 16px;
-  width: 272px;
-  height: 40px;
-  font-family: var(--font-family);
-  line-height: 150%;
-  letter-spacing: 0.04em;
-  color: #808080;
+.item-text p strong {
+  font-weight: bold;
 }
 
-.button {
-  border-radius: 8px;
-  border: none;
-  padding: 8px 16px;
-  width: 91px;
-  height: 40px;
-  background: #4e75ff;
-  font-family: var(--font-family);
-  font-weight: 500;
-  line-height: 150%;
-  letter-spacing: 0.04em;
-  color: #fff;
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
-.gallery {
-  width: 1128px;
-  height: 200px;
-  padding: 24px 150px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  column-gap: 24px;
-  row-gap: 24px;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-.gallery-item {
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button {
+  cursor: pointer;
+}
+
+form {
+  margin: 20px auto;
+
+  text-align: center;
+  position: relative;
+}
+
+.container {
   display: flex;
   flex-direction: column;
-}
-
-.gallery-image {
-  width: 360px;
-  height: 200px;
-}
-
-.stat {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  gap: 10px;
+  justify-content: center;
   align-items: center;
-  padding-top: 10px;
+  margin-top: 36px;
+}
+
+input[placeholder='Search images...'] {
+  color: #808080;
+  padding-left: 16px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  width: 272px;
+  height: 40px;
+
+  border-radius: 4px;
+  background: #fff;
+
   border: 1px solid #808080;
 }
 
-.detals-stat {
+input:hover {
+  border: 1px solid #000;
+}
+
+input:focus {
+  border: 1px solid #4e75ff;
+}
+
+form [type='submit'] {
+  border-radius: 8px;
+  background: #4e75ff;
+  padding: 8px 16px;
+}
+
+form [type='submit']:hover {
+  background: #6c8cff;
+  cursor: pointer;
+}
+
+button[type='submit']::first-line {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.gallery {
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 25px;
+  row-gap: 25px;
+  padding: 0 10px;
 }
 
-.description {
-  font-family: var(--font-family);
+.gallery-item {
+  border: 1px solid #808080;
+  width: 350px;
+  height: 300px;
+  list-style-type: none;
+}
+
+.gallery-item:hover {
+  transform: scale(1.04);
+}
+
+.item-text {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  height: 48px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.item-text ul {
   font-weight: 600;
-  font-size: 12px;
-  line-height: 133%;
-  letter-spacing: 0.04em;
   color: #2e2f42;
 }
 
-.stat-value {
-  font-family: var(--font-family);
-  font-size: 12px;
-  line-height: 200%;
-  letter-spacing: 0.04em;
+.item-text li {
+  font-weight: 400;
   color: #2e2f42;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
 }
 
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 3px solid red;
-  border-bottom-color: transparent;
+  width: 16px;
+  height: 16px;
+  border: 2px dotted #ddf502;
   border-radius: 50%;
   display: inline-block;
   position: relative;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-}
-
-.loader::after {
-  content: '';
-  position: absolute;
-  box-sizing: border-box;
-  left: 20px;
-  top: 31px;
-  border: 10px solid transparent;
-  border-right-color: #FFF;
-  transform: rotate(-40deg);
 }
 
 @keyframes rotation {
